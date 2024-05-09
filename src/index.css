@@ -1,13 +1,165 @@
+/* Filename: styles.css */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swa");
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	--primary-color: #3577f1;
+	--light-blue: #f1f8ff;
+	--dark-blue: #1a237e;
+	--blue-grey: #2f3047;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+.App {
+	max-width: 600px;
+	margin: 0 auto;
+}
+.navbar {
+	padding: 20px;
+	display: flex;
+	align-items: center; /* center vertically */
+	justify-content: space-between; /* space between items */
+	border-bottom: 1px solid #f2f2f2;
+}
+.navbar h1 {
+	font-family: "Roboto Slab", sans-serif;
+	font-size: 2.2em;
+}
+.navbar .links {
+	margin-left: auto;
+}
+.navbar a {
+	margin-left: 16px;
+	text-decoration: none;
+	padding: 6px;
+	color: black;
+}
+.navbar a:hover {
+	color: var(--primary-color);
+}
+
+.home .header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 20px;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+div.todos {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+/* message  popup when hover on login button */
+.message {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	color: black;
+	text-align: center;
+	border-radius: 6px;
+	padding: 10px;
+	z-index: 1;
+	top: 105%;
+}
+
+.login-button:hover + .message {
+	display: block;
+}
+
+.login-button {
+	position: relative;
+}
+
+/* todo */
+
+button.todos-modal {
+	background-color: var(--blue-grey);
+	color: white;
+	border: none;
+	padding: 8px 16px;
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.todo {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: royalblue;
+	border-radius: 6px;
+}
+
+.todos-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 16px;
+}
+
+.todos-body {
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+
+	padding: 5px 20px;
+}
+
+.todos-body button {
+	background-color: lightgrey;
+	border: none;
+	border-radius: 4px;
+	font-weight: bold;
+}
+
+.todo-item {
+	display: flex;
+	justify-content: space-between;
+}
+
+.todo-item > .task {
+	display: flex;
+	align-items: center;
+	align-self: start;
+}
+
+.todo-item .task input {
+	margin-right: 8px;
+}
+.todo-item .details {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding-left: 8px;
+}
+.todo-item p {
+	font-weight: bold;
+	margin: 0;
+}
+
+p.due-date {
+	color: grey;
+}
+
+.priority {
+	justify-content: center;
+	align-items: center;
+	display: flex;
 }
